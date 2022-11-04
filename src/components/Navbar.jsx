@@ -12,10 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="#5e35b1 deep-purple darken-1">
+    <nav className="#00796b teal darken-2">
       <div className="nav-wrapper">
         <span className="brand-logo">
-          Check de Rutina <i className="material-icons right "> event</i>
+          Calculadora nominal <i className="material-icons right "> grid_on</i>
         </span>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>

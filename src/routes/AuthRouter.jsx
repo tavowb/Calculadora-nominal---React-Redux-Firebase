@@ -17,13 +17,11 @@ import PublicRouter from "./PublicRouter";
 const AuthRouter = () => {
   const dispatch = useDispatch();
   const [log, setLog] = useState(false);
-  const [name, setName] = useState("");
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         dispatch(login(user.uid, user.displayName));
-        setName(user.displayName);
         setLog(true);
       } else {
         setLog(false);
@@ -56,7 +54,7 @@ const AuthRouter = () => {
           path="*"
           element={
             <PrivateRouter log={log}>
-              <AppRouter name={name} />
+              <AppRouter />
             </PrivateRouter>
           }
         />

@@ -1,9 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const AppScreen = ({ data }) => {
+const AppScreen = () => {
+  const { auth } = useSelector((state) => state);
+  console.log(auth);
+
   return (
     <>
-      <h1> Hola {data} </h1>
+      <div className="container">
+        <h1 className="center"> Hola, {auth.username} </h1>
+        <hr />
+      </div>
     </>
   );
 };

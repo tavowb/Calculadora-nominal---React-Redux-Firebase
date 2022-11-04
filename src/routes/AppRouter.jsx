@@ -3,12 +3,12 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import AppScreen from "../pages/AppScreen";
 
-const AppRouter = ({ name }) => {
+const AppRouter = () => {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route end path="/app" element={<AppScreen data={name} />} />
+        <Route end path="/app" element={<AppScreen />} />
         <Route path="*" element={<Navigate to="/app" />} />
       </Routes>
     </>
