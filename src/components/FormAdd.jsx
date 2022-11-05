@@ -31,7 +31,7 @@ const FormAdd = () => {
   return (
     <div>
       <button className="btn " onClick={handleAdd}>
-        Agregar
+        {!viewForm ? "Agregar " : "Cerrar"}
       </button>
       {viewForm && (
         <>

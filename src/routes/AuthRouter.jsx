@@ -7,6 +7,7 @@ import React, {
 } from "react-router-dom";
 import { login } from "../actions/auth";
 import { firebase } from "../firebase/config-firebase";
+import { loadData } from "../helpers/loadData";
 
 import LoginScreen from "../pages/LoginScreen";
 import RegisterScreen from "../pages/RegisterScreen";
@@ -23,6 +24,7 @@ const AuthRouter = () => {
       if (user) {
         dispatch(login(user.uid, user.displayName));
         setLog(true);
+        loadData(user.uid);
       } else {
         setLog(false);
       }
