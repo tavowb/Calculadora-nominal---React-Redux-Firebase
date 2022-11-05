@@ -3,7 +3,7 @@ export const types = {
   logout: " [Auth] logout ",
 
   nominaAdd: " [Nomina] add ",
-  nominaDelete: " [Nomina] add ",
-  nominaRead: " [Nomina] add ",
-  nominaClean: " [Nomina] add ",
+  nominaDelete: " [Nomina] delete ",
+  nominaRead: " [Nomina] read ",
+  nominaClean: " [Nomina] clean ",
 };
