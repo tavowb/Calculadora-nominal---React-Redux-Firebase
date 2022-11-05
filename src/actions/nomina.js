@@ -1,4 +1,5 @@
 import { db } from "../firebase/config-firebase";
+import { types } from "../types/types";
 
 /* Este archivo me va crear documentos, editarlos, borrarlos... */
 export const crearRegistro = ({ pago, horas }) => {
@@ -12,5 +13,12 @@ export const crearRegistro = ({ pago, horas }) => {
 
     const referencia = await db.collection(`${id}/nominas/nomina`).add(datos);
     console.log(referencia);
+  };
+};
+
+export const leerRegistros = (data) => {
+  return {
+    type: types.nominaRead,
+    payload: data,
   };
 };

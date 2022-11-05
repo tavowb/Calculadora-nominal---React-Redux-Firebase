@@ -9,7 +9,10 @@ export const nominaReducer = (state = {}, action) => {
       return {};
 
     case type.nominaRead:
-      return {};
+      return {
+        ...state,
+        data: action.payload,
+      };
 
     case type.nominaClean:
       return {};

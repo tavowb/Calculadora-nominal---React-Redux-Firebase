@@ -12,7 +12,5 @@ export const loadData = async (id) => {
     });
   });
 
-  console.log(data);
-
   return data;
 };

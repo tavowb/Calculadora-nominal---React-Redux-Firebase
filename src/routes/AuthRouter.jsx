@@ -1,3 +1,4 @@
+import { wait } from "@testing-library/user-event/dist/utils";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import React, {
@@ -6,6 +7,7 @@ import React, {
   Route,
 } from "react-router-dom";
 import { login } from "../actions/auth";
+import { leerRegistros } from "../actions/nomina";
 import { firebase } from "../firebase/config-firebase";
 import { loadData } from "../helpers/loadData";
 
@@ -20,11 +22,12 @@ const AuthRouter = () => {
   const [log, setLog] = useState(false);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         dispatch(login(user.uid, user.displayName));
         setLog(true);
-        loadData(user.uid);
+        const nomindaData = await loadData(user.uid);
+        dispatch(leerRegistros(nomindaData));
       } else {
         setLog(false);
       }
