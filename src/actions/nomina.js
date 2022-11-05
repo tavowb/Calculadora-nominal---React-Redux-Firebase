@@ -9,6 +9,6 @@ export const crearRegistro = () => {
       pago: 130.0,
     };
 
-    const referencia = db.collection(`${id}/nominas/nomina`).add(datos);
+    const referencia = await db.collection(`${id}/nominas/nomina`).add(datos);
   };
 };
