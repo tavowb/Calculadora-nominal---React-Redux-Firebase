@@ -9,7 +9,6 @@ const AppScreen = () => {
   const dispatch = useDispatch();
 
   const handleCrear = () => {
-    console.log("eche");
     dispatch(crearRegistro());
   };
 
