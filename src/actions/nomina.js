@@ -10,5 +10,6 @@ export const crearRegistro = () => {
     };
 
     const referencia = await db.collection(`${id}/nominas/nomina`).add(datos);
+    console.log(referencia);
   };
 };
