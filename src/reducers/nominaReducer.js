@@ -1,21 +1,21 @@
-import { type } from "@testing-library/user-event/dist/type";
+import { types } from "../types/types";
+const initialState = {
+  data: [],
+};
 
-export const nominaReducer = (state = {}, action) => {
+export const nominaReducer = (state = initialState, action) => {
   switch (action.type) {
-    case type.nominaAdd:
-      return {};
+    case types.nominaAdd:
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+      };
 
-    case type.nominaDelete:
-      return {};
-
-    case type.nominaRead:
+    case types.nominaRead:
       return {
         ...state,
         data: action.payload,
       };
-
-    case type.nominaClean:
-      return {};
 
     default:
       return state;

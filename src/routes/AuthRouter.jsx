@@ -1,4 +1,3 @@
-import { wait } from "@testing-library/user-event/dist/utils";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import React, {
@@ -26,8 +25,9 @@ const AuthRouter = () => {
       if (user) {
         dispatch(login(user.uid, user.displayName));
         setLog(true);
-        const nomindaData = await loadData(user.uid);
-        dispatch(leerRegistros(nomindaData));
+
+        const nominadaData = await loadData(user.uid);
+        dispatch(leerRegistros(nominadaData));
       } else {
         setLog(false);
       }

@@ -1,7 +1,7 @@
 import { db } from "../firebase/config-firebase";
 
-export const loadData = async (id) => {
-  const response = await db.collection(`${id}/nominas/nomina`).get();
+export const loadData = async (uid) => {
+  const response = await db.collection(`${uid}/nominas/nomina`).get();
   const data = [];
 
   response.forEach((nomina) => {
