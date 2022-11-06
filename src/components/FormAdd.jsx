@@ -26,6 +26,10 @@ const FormAdd = () => {
 
   const handleSave = () => {
     dispatch(crearRegistro(CantidadPago));
+    setCantidadPago({
+      pago: 0,
+      horas: 0,
+    });
   };
 
   return (
@@ -34,7 +38,7 @@ const FormAdd = () => {
         {!viewForm ? "Agregar " : "Cerrar"}
       </button>
       {viewForm && (
-        <>
+        <div className="animate__animated animate__fadeIn">
           <input
             type="number"
             placeholder="Ingrese la Cantidad de pago por hora"
@@ -53,7 +57,7 @@ const FormAdd = () => {
           <button className="btn purple" onClick={handleSave}>
             Calcular y Guardar
           </button>
-        </>
+        </div>
       )}
     </div>
   );
