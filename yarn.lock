@@ -18,6 +18,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-google-button: ^0.7.2
+    react-icons: ^4.6.0
     react-redux: ^8.0.4
     react-router-dom: ^6.4.2
     react-scripts: 5.0.1
@@ -11308,6 +11309,15 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 7d55d4cc7c6f00ed1a6847d9d8b37ded602309e827170e22dfa0045f2a511c802f64105fb924936b12c0dc8375eb202f6f846a0997ebba15130057e101f23aa7
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "react-icons@npm:4.6.0"
+  peerDependencies:
+    react: "*"
+  checksum: a08375d4563e381e156d826a8d551dd26c1bf7c424a79139173bf4c8df71e884badd7d4f5fe9faa0d73d18ace265bcc89891b65fd8f808812b1011b612ebbc53
   languageName: node
   linkType: hard
 

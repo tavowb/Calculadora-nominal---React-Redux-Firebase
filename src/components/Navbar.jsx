@@ -16,9 +16,18 @@ const Navbar = () => {
   return (
     <nav className="#00796b teal darken-2">
       <div className="nav-wrapper">
-        <span className="brand-logo">
-          Calculadora nominal <i className="material-icons right "> grid_on</i>
-        </span>
+        <ul>
+          <li>
+            <h1>s</h1>
+          </li>
+          <li>
+            <span className="brand-logo">
+              <i className="material-icons right ">grid_on</i> Calculadora
+              nominal
+            </span>
+          </li>
+        </ul>
+
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <button
