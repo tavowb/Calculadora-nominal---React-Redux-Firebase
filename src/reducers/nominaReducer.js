@@ -25,6 +25,12 @@ export const nominaReducer = (state = initialState, action) => {
         }),
       };
 
+    case types.nominaClean:
+      return {
+        ...state,
+        data: [],
+      };
+
     default:
       return state;
   }
