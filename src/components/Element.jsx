@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { borrarRegistro } from "../actions/nomina";
 
 const Element = ({ data }) => {
-  const { fecha, pago } = data;
+  const dispatch = useDispatch();
+  const { fecha, pago, id } = data;
   let fechaFormato;
   if (fecha.seconds) {
     const date = fecha.toDate();
@@ -10,12 +13,19 @@ const Element = ({ data }) => {
     fechaFormato = fecha;
   }
 
+  const handleDelete = () => {
+    dispatch(borrarRegistro(id));
+  };
+
   return (
     <>
       <td> {fechaFormato} </td>
       <td> {pago} </td>
       <td>
-        <button className="btn red"> Delete</button>
+        <button onClick={handleDelete} className="btn red">
+          {" "}
+          Delete
+        </button>
       </td>
     </>
   );

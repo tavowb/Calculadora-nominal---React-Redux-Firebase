@@ -3,21 +3,19 @@ import { types } from "../types/types";
 
 export const crearRegistro = ({ pago, horas }) => {
   return async (dispatch, getState) => {
-    const { id } = getState().auth;
+    const uid = getState().auth.id;
     const calculo = pago * horas;
     const datos = {
       fecha: new Date().toLocaleDateString(),
       pago: calculo,
     };
 
-    const referencia = await db.collection(`${id}/nominas/nomina`).add(datos);
-
-    const ide = await referencia.id;
-    console.log(ide);
+    const referencia = await db.collection(`${uid}/nominas/nomina`).add(datos);
+    const id = await referencia.id;
 
     const newData = {
       ...datos,
-      id: ide,
+      id,
     };
 
     dispatch(crear(newData));
@@ -35,5 +33,21 @@ export const crear = (data) => {
   return {
     type: types.nominaAdd,
     payload: data,
+  };
+};
+
+export const borrarRegistro = (id) => {
+  return async (dispatch, getState) => {
+    const uid = getState().auth.id;
+
+    await db.doc(`${uid}/nominas/nomina/${id}`).delete();
+    dispatch(borrar(id));
+  };
+};
+
+export const borrar = (id) => {
+  return {
+    type: types.nominaDelete,
+    payload: id,
   };
 };
