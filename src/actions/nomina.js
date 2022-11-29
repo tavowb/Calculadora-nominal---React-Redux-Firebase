@@ -12,12 +12,10 @@ export const crearRegistro = ({ pago, horas }) => {
 
     const referencia = await db.collection(`${uid}/nominas/nomina`).add(datos);
     const id = await referencia.id;
-
     const newData = {
       ...datos,
       id,
     };
-
     dispatch(crear(newData));
   };
 };
